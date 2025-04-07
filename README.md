@@ -1,5 +1,5 @@
 ## Quick Navigation
-[Version 1](#v1-1) | [Version 2](#v2-1) | [Version 3](#v3-1)
+[Version 1](#v1--back-to-top) | [Version 2](#v2--back-to-top) | [Version 3](#v3--back-to-top)
 
 # Aira
 Develop the Aira Chat Bot in Goorm 
