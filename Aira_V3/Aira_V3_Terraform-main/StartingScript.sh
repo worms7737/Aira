@@ -1,8 +1,8 @@
 #!/bin/bash
 
 # ★ 사용자 설정: 아래 변수에 본인의 AWS 자격증명을 입력하세요.
-AWS_ACCESS_KEY_ID="AKIA2UC27UYBCIK6VPQH"
-AWS_SECRET_ACCESS_KEY="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"
+AWS_ACCESS_KEY_ID=""
+AWS_SECRET_ACCESS_KEY=""
 AWS_DEFAULT_REGION="ap-northeast-2"
 
 # 🎯 AWS CLI 및 Terraform 설치 스크립트
