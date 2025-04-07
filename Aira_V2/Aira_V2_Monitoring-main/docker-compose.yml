@@ -1,0 +1,44 @@
+version: '3'
+services:
+  prometheus:
+    image: prom/prometheus
+    ports:
+      - 9090:9090
+    volumes:
+      - ./Aira_V2_Monitoring/prometheus.yml:/etc/prometheus/prometheus.yml
+    networks:
+      - monitoring
+
+  grafana:
+    image: grafana/grafana
+    ports:
+      - 3000:3000
+    environment:
+      - GF_SECURITY_ADMIN_PASSWORD=jaksim1234
+    networks:
+      - monitoring
+
+  nginx-exporter:
+    image: nginx/nginx-prometheus-exporter:latest
+    container_name: nginx-exporter
+    command:
+      - "--nginx.scrape-uri=https://kopmorning.com/nginx_status"
+        #  - "--nginx.scrape-uri.insecure-skip-verify=true"
+    ports:
+      - "9113:9113"
+    networks:
+      - monitoring
+   
+  alertmanager:
+    image: prom/alertmanager
+    volumes:
+      - ./Aira_V2_Monitoring/alertmanager.yml:/etc/alertmanager/alertmanager.yml
+    ports:
+      - "9093:9093"
+    networks:
+      - monitoring
+networks:
+  monitoring:
+    external: true
+
+
